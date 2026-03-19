@@ -44,3 +44,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.fade-in, .hover-lift').forEach((el) => {
     observer.observe(el);
 });
+
+// Initialize Lucide Icons
+lucide.createIcons();
