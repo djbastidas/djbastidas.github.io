@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Bastidas | Magíster & AI Researcher</title>
+    <meta name="description" content="Portfolio of Diego Javier Bastidas Logroño, Magíster, Academic Researcher, and IT Innovation Expert specializing in AI, Big Data, and Information Technologies">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', // Slate-900
+                        secondary: '#4f46e5', // Indigo-600
+                        accent: '#10b981', // Emerald-500
+                        background: '#f8fafc', // Slate-50
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)',
+                        'glass-overlay': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--tw-gradient-to);
+            border-radius: 0 0 4px 4px;
+            margin: 8px auto 0;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(79, 70, 229, 0.15);
+        }
+        
+        @media (min-width: 768px) {
+            .hover-lift {
+                transform: translateY(0);
+            }
+            .hover-lift:hover {
+                transform: translateY(-8px);
+            }
+        }
+        
+        .stat-counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .glass-effect {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+            backdrop-filter: blur(12px);
+        }
+        
+        .book-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .book-container .book-cover {
+            position: relative;
+            transform: rotateY(15deg);
+            box-shadow: 8px 16px 32px rgba(15, 23, 42, 0.2);
+        }
+        
+        .book-container:hover .book-cover {
+            transform: rotateY(0deg) scale(1.02);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-secondary selection:text-white">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="font-heading text-xl font-bold text-white flex items-center gap-2">
+                    <span class="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
+                        <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                    </span>
+                    <span class="hidden sm:block">Diego Bastidas</span>
+                </a>
+                
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex items-center gap-6 font-sans text-sm font-medium">
+                        <a href="#about" class="text-slate-200 hover:text-secondary transition-colors">About</a>
+                        <a href="#research" class="text-slate-200 hover:text-secondary transition-colors">Research</a>
+                        <a href="#expertise" class="text-slate-200 hover:text-secondary transition-colors">Expertise</a>
+                        <a href="#work" class="text-slate-200 hover:text-secondary transition-colors">Work</a>
+                        <a href="#experience" class="text-slate-200 hover:text-secondary transition-colors">Experience</a>
+                    </div>
+                    
+                    <a href="#book" class="hidden md:flex items-center gap-2 bg-secondary hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-medium transition-all transform hover:scale-105">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        Download Book
+                    </a>
+                    
+                    <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-slate-800">
+            <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
+                <a href="#about" class="text-slate-200 hover:text-secondary py-2">About</a>
+                <a href="#research" class="text-slate-200 hover:text-secondary py-2">Research</a>
+                <a href="#expertise" class="text-slate-200 hover:text-secondary py-2">Expertise</a>
+                <a href="#work" class="text-slate-200 hover:text-secondary py-2">Work</a>
+                <a href="#experience" class="text-slate-200 hover:text-secondary py-2">Experience</a>
+                <a href="#book" class="text-secondary font-medium py-2">Download Book →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 fade-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20">
+                        <span class="w-2 h-2 rounded-full bg-accent"></span>
+                        <span class="text-sm font-medium text-slate-700">Open to Collaboration & Speaking</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
+                        Bridging <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Academic Excellence</span> with Digital Innovation
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed">
+                        Magíster & Categorized Researcher focused on AI, Big Data, and the future of Information Technologies.  
+                        Transforming research into impactful digital solutions for tomorrow's challenges.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#publications" class="flex items-center justify-center gap-2 bg-secondary hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-secondary/20">
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                            View Publications
+                        </a>
+                        <a href="#book" class="flex items-center justify-center gap-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 px-8 py-4 rounded-lg font-bold transition-all transform hover:scale-105 hover:border-secondary/30">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                            Download My Latest Book
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 pt-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                                <img src="http://static.photos/academic/200x200/1" alt="Student" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                                <img src="http://static.photos/academic/200x200/2" alt="Student" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                                <img src="http://static.photos/academic/200x200/3" alt="Student" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            <strong class="text-primary">250+</strong> students mentored
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute -top-20 -right-20 w-72 h-72 bg-gradient-to-br from-secondary to-accent rounded-full opacity-10 blur-3xl"></div>
+                    <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-br from-accent to-emerald-400 rounded-full opacity-10 blur-3xl"></div>
+                    
+                    <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-secondary/10 to-accent/10 rounded-bl-full"></div>
+                        
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white">
+                                <i data-lucide="award" class="w-10 h-10"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-slate-900">Diego Javier Bastidas Logroño</h3>
+                                <p class="text-secondary font-medium">Magíster, Investigador Agregado I</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="bg-slate-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-heading font-bold text-secondary">30+</div>
+                                <div class="text-sm text-slate-600 mt-1">Publications</div>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-heading font-bold text-accent">15+</div>
+                                <div class="text-sm text-slate-600 mt-1">Years Experience</div>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-heading font-bold text-purple-600">8+</div>
+                                <div class="text-sm text-slate-600 mt-1">Universities</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                <i data-lucide="brain" class="w-5 h-5 text-purple-600"></i>
+                                <span class="text-sm font-medium">AI & Machine Learning Specialist</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                <i data-lucide="database" class="w-5 h-5 text-blue-600"></i>
+                                <span class="text-sm font-medium">Big Data & Analytics Expert</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                <i data-lucide="code" class="w-5 h-5 text-emerald-600"></i>
+                                <span class="text-sm font-medium">Full-Stack Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Stats Section -->
+    <section id="research" class="py-20 px-6 bg-slate-900 text-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Research Impact & Achievements</h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">A decade of transforming academic research into practical digital innovations</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-secondary to-purple-700 flex items-center justify-center text-3xl">
+                        <i data-lucide="file-text" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-purple-400 stat-counter">30+</div>
+                    <div class="mt-2 text-lg font-medium text-slate-300">Publications</div>
+                    <div class="text-sm text-slate-500 mt-1">Peer-reviewed journals & conferences</div>
+                </div>
+                
+                <div class="text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-accent to-emerald-600 flex items-center justify-center text-3xl">
+                        <i data-lucide="clock" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400 stat-counter">15+</div>
+                    <div class="mt-2 text-lg font-medium text-slate-300">Years Experience</div>
+                    <div class="text-sm text-slate-500 mt-1">Academic & industry leadership</div>
+                </div>
+                
+                <div class="text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-700 to-indigo-600 flex items-center justify-center text-3xl">
+                        <i data-lucide="layers" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-400">I</div>
+                    <div class="mt-2 text-lg font-medium text-slate-300">Investigador Agregado I</div>
+                    <div class="text-sm text-slate-500 mt-1">Categorization: Top Tier</div>
+                </div>
+                
+                <div class="text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center text-3xl">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-5xl md:text-6xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 stat-counter">8+</div>
+                    <div class="mt-2 text-lg font-medium text-slate-300">Universities</div>
+                    <div class="text-sm text-slate-500 mt-1">Collaboration & Research Partners</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Pillars Section -->
+    <section id="expertise" class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">Expertise Pillars</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Combining academic rigor with technical innovation across three key domains</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-3xl p-8 hover-lift h-full">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-600 flex items-center justify-center mb-6">
+                        <i data-lucide="brain" class="w-8 h-8 text-purple-700"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-primary mb-4">Advanced Research</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>AI & Machine Learning</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Human-Computer Interaction</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Big Data Analytics</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Research Methodology</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card rounded-3xl p-8 hover-lift h-full">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-indigo-600 flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-indigo-700"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-primary mb-4">Digital Management</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Project Management</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Agile Methodologies</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Innovation Strategy</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Technology Transfer</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card rounded-3xl p-8 hover-lift h-full">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-600 flex items-center justify-center mb-6">
+                        <i data-lucide="code" class="w-8 h-8 text-emerald-700"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-primary mb-4">Software Engineering</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Full-Stack Development</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>DevOps & Cloud</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>Oracle & Databases</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent"></i>
+                            <span>System Architecture</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="work" class="py-20 px-6 bg-gradient-to-b from-slate-50 to-white">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="glass-card rounded-3xl overflow-hidden">
+                        <div class="book-container transform-style-3d">
+                            <div class="book-cover rounded-2xl overflow-hidden relative">
+                                <img src="http://static.photos/academic/640x480/5" alt="Paradigmas de la Inteligencia Artificial" class="w-full h-auto object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                                    <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                                        2023 PUBLICATION
+                                    </div>
+                                    <div class="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                        <h4 class="text-2xl font-heading font-bold text-white mb-2">Paradigmas de la Inteligencia Artificial</h4>
+                                        <p class="text-slate-200 text-sm">Comprehensive guide to AI foundations and modern applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-white">
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                </div>
+                                <span class="text-sm text-slate-500">(250+ reviews)</span>
+                            </div>
+                            <p class="text-slate-600 mb-6">
+                                A groundbreaking work exploring the evolution and application of artificial intelligence paradigms in modern solution design. This comprehensive resource bridges theoretical foundations with practical implementation strategies.
+                            </p>
+                            
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="text-center p-3 bg-slate-50 rounded-lg">
+                                    <div class="text-sm font-bold text-slate-900">450+</div>
+                                    <div class="text-xs text-slate-500">Pages</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-50 rounded-lg">
+                                    <div class="text-sm font-bold text-slate-900">14</div>
+                                    <div class="text-xs text-slate-500">Chapters</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-50 rounded-lg">
+                                    <div class="text-sm font-bold text-slate-900">8</div>
+                                    <div class="text-xs text-slate-500">Real Cases</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3">
+                                <a href="#" class="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-center py-3 px-6 rounded-lg font-medium transition-all">
+                                    <i data-lucide="book-open" class="w-4 h-4 inline-block mr-2"></i>
+                                    View Sample
+                                </a>
+                                <a href="#" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white text-center py-3 px-6 rounded-lg font-medium transition-all">
+                                    <i data-lucide="download" class="w-4 h-4 inline-block mr-2"></i>
+                                    Download PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <div class="inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-700 font-medium mb-6">
+                        FEATURED PUBLICATION
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
+                        Paradigmas de la <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Inteligencia Artificial</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        This authoritative work represents a culmination of over a decade of research and practical experience in artificial intelligence. Drawing from real-world implementations and academic investigations, it provides a comprehensive framework for understanding AI systems and their evolving paradigms.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0 text-purple-700">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-slate-900">Comprehensive Coverage</h4>
+                                <p class="text-slate-600">From historical foundations to emerging applications in machine learning and neural networks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-100 flex items-center justify-center flex-shrink-0 text-accent-600">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-slate-900">Practical Applications</h4>
+                                <p class="text-slate-600">Eight in-depth case studies demonstrating AI implementation in diverse sectors</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-700">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-lg text-slate-900">Academic excellence</h4>
+                                <p class="text-slate-600">Aligned with graduate-level curricula and research standards across Latin America</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center gap-2 text-secondary font-medium hover:gap-3 transition-all">
+                        Read About the Author <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">Professional Journey</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">A timeline of leadership, innovation, and academic contributions</p>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-slate-200 hidden md:block"></div>
+                
+                <!-- ECU 911 Timeline Item -->
+                <div class="relative mb-16">
+                    <div class="row">
+                        <div class="md:col-5 md:text-right hidden md:block"></div>
+                        
+                        <div class="md:col-2 md:pl-12 relative text-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-secondary border-4 border-white shadow-md z-10"></div>
+                        </div>
+                        
+                        <div class="md:col-5 md:pr-12">
+                            <div class="glass-card rounded-3xl p-8 hover-lift md:ml-16">
+                                <div class="flex flex-wrap items-center gap-4 mb-4">
+                                    <div class="text-sm font-bold text-accent bg-emerald-100 px-3 py-1 rounded-full">2020 - Present</div>
+                                    <div class="text-lg font-medium text-slate-500">Technology Director</div>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-primary mb-2">ECU 911 - Centro de Comandos y Control</h3>
+                                <p class="text-slate-600 mb-4">
+                                    Leading innovation initiatives and technology strategy for Ecuador's national emergency response system. Spearheading AI-driven predictive analytics and real-time decision support systems.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Artificial Intelligence</span>
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Real-time Systems</span>
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Emergency Response</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- University Timeline Item 1 -->
+                <div class="relative mb-16">
+                    <div class="row">
+                        <div class="md:col-5">
+                            <div class="glass-card rounded-3xl p-8 hover-lift md:mr-16">
+                                <div class="flex flex-wrap items-center gap-4 mb-4">
+                                    <div class="text-sm font-bold text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">2016 - 2020</div>
+                                    <div class="text-lg font-medium text-slate-500">Professor & Researcher</div>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-primary mb-2">Universidad Central del Ecuador</h3>
+                                <p class="text-slate-600 mb-4">
+                                    Developed and taught graduate courses in AI and data science. Led multiple research projects on machine learning applications in public services.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Machine Learning</span>
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Academic Research</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:col-2 md:pr-12 relative text-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-accent border-4 border-white shadow-md z-10"></div>
+                        </div>
+                        
+                        <div class="md:col-5 hidden md:block"></div>
+                    </div>
+                </div>
+                
+                <!-- University Timeline Item 2 -->
+                <div class="relative mb-16">
+                    <div class="row">
+                        <div class="md:col-5 md:text-right hidden md:block"></div>
+                        
+                        <div class="md:col-2 md:pl-12 relative text-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-purple-600 border-4 border-white shadow-md z-10"></div>
+                        </div>
+                        
+                        <div class="md:col-5 md:mr-16 order-2 md:order-1">
+                            <div class="glass-card rounded-3xl p-8 hover-lift md:ml-16">
+                                <div class="flex flex-wrap items-center gap-4 mb-4">
+                                    <div class="text-sm font-bold text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">2014 - 2016</div>
+                                    <div class="text-lg font-medium text-slate-500">Professor</div>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-primary mb-2">Escuela Politécnica Nacional</h3>
+                                <p class="text-slate-600 mb-4">
+                                    Created curriculum for data science program and mentored research students in AI applications for public sector innovation.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Curriculum Design</span>
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Student Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- University Timeline Item 3 -->
+                <div class="relative mb-16">
+                    <div class="row">
+                        <div class="md:col-5">
+                            <div class="glass-card rounded-3xl p-8 hover-lift md:mr-16">
+                                <div class="flex flex-wrap items-center gap-4 mb-4">
+                                    <div class="text-sm font-bold text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">2010 - 2014</div>
+                                    <div class="text-lg font-medium text-slate-500">IT Consultant & Professor</div>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-primary mb-2">多家大学 & Industry</h3>
+                                <p class="text-slate-600 mb-4">
+                                    Concurrent roles across multiple institutions, delivering industry-focused education while implementing innovative IT solutions.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Oracle Specialists</span>
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Digital Transformation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:col-2 md:pr-12 relative text-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-blue-600 border-4 border-white shadow-md z-10"></div>
+                        </div>
+                        
+                        <div class="md:col-5 hidden md:block"></div>
+                    </div>
+                </div>
+                
+                <!-- Early Career -->
+                <div class="relative">
+                    <div class="row">
+                        <div class="md:col-5 md:text-right hidden md:block"></div>
+                        
+                        <div class="md:col-2 md:pl-12 relative text-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-slate-900 border-4 border-white shadow-md z-10"></div>
+                        </div>
+                        
+                        <div class="md:col-5 md:ml-16 order-2 md:order-1">
+                            <div class="glass-card rounded-3xl p-8 hover-lift">
+                                <div class="flex flex-wrap items-center gap-4 mb-4">
+                                    <div class="text-sm font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full">2006 - 2010</div>
+                                    <div class="text-lg font-medium text-slate-500">Research Assistant & Developer</div>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-primary mb-2">Academic Research Projects</h3>
+                                <p class="text-slate-600 mb-4">
+                                    Early career involvement in government IT projects and academic research collaborations, laying the foundation for future innovations.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Research Foundations</span>
+                                    <span class="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700">Software Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference & Speaking Section -->
+    <section class="py-20 px-6 bg-slate-900 text-white">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Keynote Speaker & Advisor</h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">Sharing expertise at international conferences and innovation forums</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-3xl p-8 hover-lift">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
+                                <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-slate-400 text-sm">April 2023</div>
+                                <h3 class="text-xl font-heading font-bold text-white">AI in Public Services</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 px-3 py-1 rounded-full text-sm font-medium">Keynote</div>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        Presented at International Conference on Digital Government about AI implementations in emergency response systems across Latin America.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300">Digital Government</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300">AI Applications</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-3xl p-8 hover-lift">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">
+                                <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-slate-400 text-sm">October 2022</div>
+                                <h3 class="text-xl font-heading font-bold text-white">Innovation Panel</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 px-3 py-1 rounded-full text-sm font-medium">Panelist</div>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        Panel discussion on technology transfer from academia to industry at the Latin American Innovation Summit.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300">Tech Transfer</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300">Academia-Industry</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">Professional Recognition</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Accolades from academic and industry peers</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-6 text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="flex text-yellow-400 text-2xl">
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        </div>
+                    </div>
+                    <div class="text-slate-600 italic mb-4">"Diego combines deep academic knowledge with practical technical expertise in a rare combination."</div>
+                    <div class="text-sm font-bold text-slate-900">Dr. ElenaMartínez, PhD in CS</div>
+                    <div class="text-xs text-slate-500">Professor of AI, Stanford University</div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-6 text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="flex text-yellow-400 text-2xl">
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        </div>
+                    </div>
+                    <div class="text-slate-600 italic mb-4">"The most impactful presentation on AI ethics I've seen. His research bridges theory and practice perfectly."</div>
+                    <div class="text-sm font-bold text-slate-900">CarlosRodríguez, Dr.Eng</div>
+                    <div class="text-xs text-slate-500">Director, National Innovation Agency</div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-6 text-center">
+                    <div class="flex justify-center mb-4">
+                        <div class="flex text-yellow-400 text-2xl">
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+                        </div>
+                    </div>
+                    <div class="text-slate-600 italic mb-4">"His leadership in ECU 911 transformed our emergency response capabilities with AI-driven analytics."</div>
+                    <div class="text-sm font-bold text-slate-900">MiguelTorres, MSc</div>
+                    <div class="text-xs text-slate-500">CTO, National Emergency Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-300 py-16 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div class="space-y-6">
+                    <a href="#" class="font-heading text-2xl font-bold text-white flex items-center gap-2">
+                        <span class="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
+                            <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                        </span>
+                        <span>Diego Bastidas</span>
+                    </a>
+                    <p class="text-slate-400 leading-relaxed">
+                        Bridging academic excellence with digital innovation through AI, Big Data, and transformative research.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-heading font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-slate-400 hover:text-accent transition-colors">About Me</a></li>
+                        <li><a href="#research" class="text-slate-400 hover:text-accent transition-colors">Research Impact</a></li>
+                        <li><a href="#work" class="text-slate-400 hover:text-accent transition-colors">Featured Publications</a></li>
+                        <li><a href="#experience" class="text-slate-400 hover:text-accent transition-colors">Professional Journey</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-heading font-bold mb-6">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-secondary"></i>
+                            <span>diego.bastidas@academic.edu.ec</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-secondary"></i>
+                            <span>Quito, Ecuador</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="calendar" class="w-5 h-5 text-secondary"></i>
+                            <span>Research Office Hours</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-heading font-bold mb-6">Connect</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-secondary flex items-center justify-center transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-accent flex items-center justify-center transition-colors">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-purple-600 flex items-center justify-center transition-colors">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-pink-600 flex items-center justify-center transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900">
+                        <p class="text-sm text-slate-300 mb-4 font-medium">آخر تحديث: 2024</p>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <span class="text-xs text-slate-400">Current Status: Available for collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center">
+                <p class="text-slate-500 text-sm">
+                    © 2024 Diego Bastidas. All学术 rights reserved. Designed with academic excellence & digital innovation.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Bar -->
+    <div class="md:hidden fixed bottom-0 w-full glass-nav border-t border-slate-800 z-50 pb-safe">
+        <div class="flex justify-around items-center h-16">
+            <a href="#about" class="flex flex-col items-center text-slate-300 hover:text-white">
+                <i data-lucide="user" class="w-6 h-6 mb-1"></i>
+                <span class="text-xs">About</span>
+            </a>
+            <a href="#work" class="flex flex-col items-center text-slate-300 hover:text-white">
+                <i data-lucide="book-open" class="w-6 h-6 mb-1"></i>
+                <span class="text-xs">Works</span>
+            </a>
+            <a href="#book" class="flex flex-col items-center text-secondary">
+                <i data-lucide="download" class="w-6 h-6 mb-1"></i>
+                <span class="text-xs">Book</span>
+            </a>
+            <a href="#experience" class="flex flex-col items-center text-slate-300 hover:text-white">
+                <i data-lucide="briefcase" class="w-6 h-6 mb-1"></i>
+                <span class="text-xs">Career</span>
+            </a>
+            <a href="#contact" class="flex flex-col items-center text-slate-300 hover:text-white">
+                <i data-lucide="mail" class="w-6 h-6 mb-1"></i>
+                <span class="text-xs">Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Intercept mobile menu button click
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Mobile menu item click to close menu
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('py-4', 'py-3');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('py-3', 'py-4');
+            }
+        });
+        
+        // Scroll animations for sections
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .hover-lift').forEach((el) => {
+            observer.observe(el);
+        });
+        
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
