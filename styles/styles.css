@@ -1,0 +1,112 @@
+/* Body and Background */
+body {
+    background-color: #f8fafc;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Glass Navigation */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Section Title */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--tw-gradient-to);
+    border-radius: 0 0 4px 4px;
+    margin: 8px auto 0;
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.15);
+}
+
+@media (min-width: 768px) {
+    .hover-lift {
+        transform: translateY(0);
+    }
+    .hover-lift:hover {
+        transform: translateY(-8px);
+    }
+}
+
+/* Stat Counter */
+.stat-counter {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Glass Effect */
+.glass-effect {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+    backdrop-filter: blur(12px);
+}
+
+/* Book Container */
+.book-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.book-container .book-cover {
+    position: relative;
+    transform: rotateY(15deg);
+    box-shadow: 8px 16px 32px rgba(15, 23, 42, 0.2);
+}
+
+.book-container:hover .book-cover {
+    transform: rotateY(0deg) scale(1.02);
+}
+
+/* Animate on Scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
